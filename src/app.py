@@ -6,8 +6,9 @@ from flask import Flask, request, jsonify, url_for
 from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
-from utils import APIException, generate_sitemap
-from models import db
+from api.utils import APIException, generate_sitemap
+from api.models import db
+from api.routes import api
 #from models import Person
 
 app = Flask(__name__)
@@ -18,6 +19,8 @@ MIGRATE = Migrate(app, db)
 db.init_app(app)
 CORS(app)
 
+app.register_blueprint(api, url_prefix='/api')
+
 # Handle/serialize errors like a JSON object
 @app.errorhandler(APIException)
 def handle_invalid_usage(error):
@@ -27,15 +30,6 @@ def handle_invalid_usage(error):
 @app.route('/')
 def sitemap():
     return generate_sitemap(app)
-
-@app.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
-
-    response_body = {
-        "hello": "world"
-    }
-
-    return jsonify(response_body), 200
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':
