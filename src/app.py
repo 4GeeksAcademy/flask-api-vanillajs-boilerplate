@@ -19,9 +19,12 @@ app.url_map.strict_slashes = False
 # database condiguration
 if os.getenv("DB_CONNECTION_STRING") is not None:
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_CONNECTION_STRING')
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    MIGRATE = Migrate(app, db)
-    db.init_app(app)
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:////tmp/test.db"
+
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+MIGRATE = Migrate(app, db)
+db.init_app(app)
 
 # Allow CORS requests to this API
 CORS(app)
