@@ -9,8 +9,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
     "build": "webpack --mode development --verbose --colors --display-error-details",
-    "heroku-prebuild": "npm run build",
-    "deploy": "node deploy-to-github.js"
+    "heroku-prebuild": "npm run build"
   },
   "repository": {
     "type": "git",
