@@ -25,7 +25,7 @@ All your application endpoints will be published under the `./api/` sub-path, fo
 POST /people   → will become →   POST /api/people
 ```
 
-**💻Front-End**: All your front-end code mus go inside `./src/front` and the entry javascript file is located at `src/front/js/index.js`.
+**🎨Front-End**: All your front-end code mus go inside `./src/front` and the entry javascript file is located at `src/front/js/index.js`.
 
 - src/front/style/style.css (your front end styles)
 - src/front/js/index.js (entry file for your js application)
