@@ -1,2 +1,2 @@
-release: pipenv run upgrade
+release: npm run build && pipenv run upgrade
 web: gunicorn wsgi --chdir ./src/
