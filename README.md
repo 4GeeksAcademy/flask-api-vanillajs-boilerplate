@@ -4,19 +4,32 @@
 
 ## Features
 
-- Extensive documentation [here](https://github.com/4GeeksAcademy/flask-rest-hello/tree/master/docs).
+- Extensive documentation [here](https://github.com/4GeeksAcademy/flask-api-vanillajs-boilerplate/tree/master/docs).
+- Support for Front-End vanillajs and backend Flask API
 - Integrated with Pipenv for package managing.
 - Fast deloyment to heroku with `$ pipenv run deploy`.
-- Use of `.env` file.
+- Use of `.env` file (persistent enviromental variables).
 - SQLAlchemy integration for database abstraction.
 
 ## How to Start the Project?
 
-There is an example API working with an example database. All your application code should be written inside the `./src/` folder.
+**Back-End**: There is an example API working with an example database. All your API code should be written inside the `./src/api` folder.
 
-- src/main.py (it's where your endpoints should be coded)
-- src/models.py (your database tables and serialization logic)
-- src/utils.py (some reusable classes and functions)
+- src/api/routes.py (it's where your endpoints should be coded)
+- src/api/models.py (your database tables and serialization logic)
+- src/api/utils.py (some reusable classes and functions)
+
+All your application endpoints will be published under the `./api/` sub-path, for example:
+
+```bash
+POST /people   → will become →   POST /api/people
+```
+
+**Front-End**: All your front-end code mus go inside `./src/front` and the entry javascript file is located at `src/front/js/index.js`.
+
+- src/front/style/style.css (your front end styles)
+- src/front/js/index.js (entry file for your js application)
+- src/front/index.html (the main HTML, it will be displayed on the default path `/`)
 
 For a more detailed explanation, look for the tutorial inside the `docs` folder.
 
