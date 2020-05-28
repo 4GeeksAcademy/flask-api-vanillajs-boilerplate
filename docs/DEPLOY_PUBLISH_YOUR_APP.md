@@ -17,6 +17,12 @@ $ heroku login -i
 $ heroku create <your_application_name>
 ```
 
+4. Add Python and also node.js capabilities to heroku to be able to use npm on production
+```
+$ heroku buildpacks:add --index 1 heroku/python
+$ heroku buildpacks:add --index 2 heroku/nodejs
+```
+
 4. Commit and push to heroku
 Make sure you have commited your changes and push to heroku
 ```sh
