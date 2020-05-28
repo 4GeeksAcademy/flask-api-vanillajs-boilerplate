@@ -63,6 +63,11 @@ $ npm i heroku -g
 $ heroku login -i
 // Create an application (if you don't have it already)
 $ heroku create <your_application_name>
+// Add python to the heroku server
+$ heroku buildpacks:add --index 1 heroku/python
+// add node.js capabilities to heroku to be able to use npm on production
+$ heroku buildpacks:add --index 2 heroku/nodejs
+
 // Commit and push to heroku (commited your changes)
 $ git push heroku master
 ```
