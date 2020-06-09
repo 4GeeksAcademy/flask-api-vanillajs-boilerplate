@@ -48,7 +48,6 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   devServer: {
       hot: true,
-      quiet: true,
       disableHostCheck: true
   },
   plugins: [
