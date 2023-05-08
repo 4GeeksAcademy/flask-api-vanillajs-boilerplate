@@ -8,5 +8,6 @@ dist/*
 package.json
 node_modules/
 !package.json
+!.vscode
 
 __pycache__/
